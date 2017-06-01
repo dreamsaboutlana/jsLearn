@@ -10,7 +10,7 @@
  [0,16,24,32] => 8
   
  */
- 
+
 let arr = [1, 3, 5, 9];
 
 function random(arr) {
@@ -29,13 +29,13 @@ function random(arr) {
 
       let newStep = arr[i + 1] - arr[i];
       let lostNum = arr[0] - newStep;
-       arr.splice(0, 0,lostNum);
+      arr.splice(0, 0, lostNum);
       return arr;
     }
 
   }
 
-  
+
 
 }
 
