@@ -1,3 +1,4 @@
+// 'use strict';
 const arr = [1, 2, 75, 310, 20, 75];
 const obj = {
   name: 'qwerty',
@@ -7,8 +8,8 @@ const obj = {
 function findIsArray(obj, arg) {
   // let obj = arr;
   if (Array.isArray(obj)) {
-    for (let i = 0; i < obj.length; i++) {
-      let elem = obj[i];
+    for (var i = 0; i < obj.length; i++) {
+      var elem = obj[i];
       if (elem > arg) {
         return elem;
       }
@@ -19,28 +20,26 @@ function findIsArray(obj, arg) {
 console.log(findIsArray(arr, 4));
 
 function findNumber(obj, arg) {
- findIsArray(obj, arg); 
-  // if (Array.isArray(obj)) {
-  //   for (let i = 0; i < obj.length; i++) {
-  //     let elem = obj[i];
-  //     if (elem > arg) {
-  //       return elem;
-  //     }
-  //   }
-  // }
-  for (key in obj) {
-    let index = obj[key];
-     findIsArray(index, arg); 
-    // if (Array.isArray(index)) {
-    //   for (let i = 0; i < index.length; i++) {
-    //     let elem = index[i];
-    //     if (elem > arg) {
-    //       return elem;
-    //     }
-    //   }
-    // }
+  if (Array.isArray(obj)) {
+    for (var i = 0; i < obj.length; i++) {
+      var elem = obj[i];
+      if (elem > arg) {
+        return elem;
+      }
+    }
   }
-  return ;
+  for (key in obj) {
+    var index = obj[key];
+    if (Array.isArray(index)) {
+      for (var i = 0; i < index.length; i++) {
+        var elem = index[i];
+        if (elem > arg) {
+          return elem;
+        }
+      }
+    }
+  }
+  return;
 }
 console.log(findNumber(arr, 3));
 console.log(findNumber(obj, 3));
