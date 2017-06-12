@@ -29,9 +29,7 @@ function random(arr) {
       arr.splice(0, 0, lostNum);
       return arr;
     }
-
   }
-
 }
 
 console.log(random([1, 3, 5, 9]));

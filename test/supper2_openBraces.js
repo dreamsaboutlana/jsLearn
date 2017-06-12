@@ -17,22 +17,26 @@ let arr2 = [25, 10, [10, [15]]];
 
 function openBraces(arr) {
   let newArr = [];
+  arr.forEach(elem => {
 
-  // for (let i = 0; i < arr.length; i++) {
-  //   // return arr.join();
-  //   let elem = arr[i];
-  //   if (Array.isArray(elem)) {
-  //     openBraces(elem)
+    if (Array.isArray(elem)) {
+      elem.forEach(elem1 => {
 
-  //   } else {
-  //     newArr.push(elem);
-  //   }
+        if (Array.isArray(elem1)) {
+          elem1.forEach(elem2 => {
+            newArr.push(elem2);
+          });
+        } else {
+          newArr.push(elem1);
+        }
+      });
+    } else {
+      newArr.push(elem);
+    }
+  });
 
-
-  }
   return newArr;
 }
-
 
 console.log(openBraces(arr));
 console.log(openBraces(arr2));
