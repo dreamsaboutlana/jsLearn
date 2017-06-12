@@ -18,16 +18,19 @@ let arr2 = [25, 10, [10, [15]]];
 function openBraces(arr) {
   let newArr = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    // return arr.join();
-    let elem = arr[i];
-    if (Array.isArray(elem)) {
-      return openBraces(elem);
-    } else {
-      return newArr.push(elem);
-    }
+  // for (let i = 0; i < arr.length; i++) {
+  //   // return arr.join();
+  //   let elem = arr[i];
+  //   if (Array.isArray(elem)) {
+  //     openBraces(elem)
+
+  //   } else {
+  //     newArr.push(elem);
+  //   }
+
 
   }
+  return newArr;
 }
 
 
