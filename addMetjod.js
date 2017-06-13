@@ -5,7 +5,7 @@ function addMethod(object, name, fn) {
 
   let param = fn.length;
   // console.log('param ' + param);
-  if (param == fn.length) {
+  // if (param == fn.length) {
 
     object[name] = function(...args) {
 
@@ -14,7 +14,7 @@ function addMethod(object, name, fn) {
          fn(args);
       }
     }
-  }
+
 
 }
 
@@ -31,7 +31,8 @@ addMethod(junior, 'ok', function(one, two, three) {
   console.log('three arguments');
 });
 
-junior.ok(); //'zero arguments'
+junior.ok(); 
+junior.ok;//'zero arguments'
 junior.ok(1); //'one arguments'
 junior.ok(1, 2); // 'two arguments'
 junior.ok(1, 2, 3); // 'three arguments'
